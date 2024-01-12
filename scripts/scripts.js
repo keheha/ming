@@ -39,7 +39,7 @@ function buildMingBlock(main) {
   // eslint-disable-next-line no-bitwise
   
   for (var i = 0; i < p.length; ++i) {
-    if (p[i].innerText.match(/ming-auto-block/gi).length > 0)
+    if (p[i].innerText.match(/ming-auto-block/gi))
     {
       const section = document.createElement('div');
       const content1 = document.createElement('div');
