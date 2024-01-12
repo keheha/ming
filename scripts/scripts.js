@@ -35,7 +35,7 @@ function buildHeroBlock(main) {
  * @param {Element} main The container element
  */
 function buildMingBlock(main) {
-  const allP = main.querySelectorAll('p');
+  const p = main.querySelectorAll('p');
   // eslint-disable-next-line no-bitwise
   
   for (var i = 0; i < p.length; ++i) {
