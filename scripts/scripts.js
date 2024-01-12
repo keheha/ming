@@ -31,6 +31,28 @@ function buildHeroBlock(main) {
 }
 
 /**
+ * Builds hero block and prepends to main in a new section.
+ * @param {Element} main The container element
+ */
+function buildMingBlock(main) {
+  const allP = main.querySelectorAll('p');
+  // eslint-disable-next-line no-bitwise
+  
+  for (var i = 0; i < p.length; ++i) {
+    if (p[i].innerText.match(/ming-auto-block/gi).length > 0)
+    {
+      const section = document.createElement('div');
+      const content1 = document.createElement('div');
+      const content2 = document.createElement('div');
+      content1.innerText = "1: " + p.innerText;
+      content2.innerText = "2: " + p.innerText;
+      section.append(buildBlock('ming', [content1, content2]));
+      p[i].replaceWith(section);
+    }
+  }
+}
+
+/**
  * load fonts.css and set a session storage flag
  */
 async function loadFonts() {
@@ -49,6 +71,7 @@ async function loadFonts() {
 function buildAutoBlocks(main) {
   try {
     buildHeroBlock(main);
+    buildMingBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
