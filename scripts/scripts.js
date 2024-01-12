@@ -46,7 +46,7 @@ function buildMingBlock(main) {
       const content2 = document.createElement('div');
       content1.innerText = "1: " + p.innerText;
       content2.innerText = "2: " + p.innerText;
-      section.append(buildBlock('ming', [content1, content2]));
+      section.append(buildBlock('ming', {arr: [content1, content2]}));
       p[i].replaceWith(section);
     }
   }
